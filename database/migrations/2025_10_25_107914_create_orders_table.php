@@ -14,7 +14,7 @@ return new class extends Migration {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            $table->integer('amount', 20);
+            $table->integer('amount');
             $table->enum('payment_status', PaymentStatus::options())->default(PaymentStatus::PENDING);
             $table->text('description')->nullable();
             $table->string('address')->nullable();
